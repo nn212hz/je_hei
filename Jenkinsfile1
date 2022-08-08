@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('pull code') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'aa384ba3-049e-4a84-825c-14b05475cbfb', url: 'git@github.com:nn212hz/je_hei.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/${branch}']], extensions: [], userRemoteConfigs: [[credentialsId: 'aa384ba3-049e-4a84-825c-14b05475cbfb', url: 'git@github.com:nn212hz/je_hei.git']]])
             }
         }
         stage('build project') {
